@@ -1,23 +1,25 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	return (
 		<Navbar expand="lg" className="header">
 			<Container>
-				<Navbar.Brand href="#home" className="fw-bold">
+				<Link to={`/`} className={`nav-link fw-bold`}>
 					EpiDogSitting
-				</Navbar.Brand>
+				</Link>
+
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="">
-						<Nav.Link href="#register-dogsitter">Diventa un sitter</Nav.Link>
-						<Nav.Link href="#our-services">I nostri servizi</Nav.Link>
+						<Link to={`/`}>Diventa un sitter</Link>
+						<Link to={`/search-dogsitters`}>I nostri servizi</Link>
 					</Nav>
 					<Nav className="ms-auto">
-						<Nav.Link href="#home">Home</Nav.Link>
-						<Nav.Link href="#register-dogowner">Registrati</Nav.Link>
-						<Nav.Link href="#login">Accedi</Nav.Link>
+						<Link to={`/`}>Home</Link>
+						<Link to={`/sign-up-dogowner`}>Registrati</Link>
+						<Link to={`/sign-in`}>Accedi</Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

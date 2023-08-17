@@ -113,6 +113,8 @@ h3 {
 }
 .header a {
 	color: #ffffff;
+	text-decoration: none;
+	padding: 0.5rem;
 }
 
 /*
@@ -227,7 +229,8 @@ h3 {
  * Sign Up - Sign In
  * ------------------------------------
  */
-.signin .hero-section::before {
+.signin .hero-section::before,
+.signup .hero-section::before {
 	background-color: rgba(0, 0, 0, 0.55);
 }
 .signin form,
@@ -236,6 +239,10 @@ h3 {
 	border-radius: 0.375rem;
 	position: relative;
 	z-index: 10;
+}
+.signin form h1,
+.signup form h1 {
+	text-align: center;
 }
 .signin form input[id="email"],
 .signup form input[id="name"] {
