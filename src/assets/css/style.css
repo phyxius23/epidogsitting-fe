@@ -1,7 +1,476 @@
+/*
+ * Google Fonts
+ * ------------------------------------
+ */
+/* ***** FONT BODY ***** */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+
+/* ***** FONT TITLE ***** */
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+/*
+ * Body
+ * ------------------------------------
+ */
+body {
+	background-color: #ffffff;
+	color: #3f2500;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+	body {
+		font-size: 14px;
+	}
+}
+
+/*
+ * Typography
+ * ------------------------------------
+ */
+h1,
+.h1 {
+	font-size: 2.5rem;
+}
+h3,
+.h3 {
+	font-size: 2rem;
+}
+h4,
+.h4 {
+	font-size: 1.15rem;
+}
+h5,
+.h5 {
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+h1,
+h3 {
+	font-family: "Courgette", cursive;
+}
+
+/*
+ * Button Custom
+ * ------------------------------------
+ */
+/* Service Button */
+.btn {
+	transition-duration: 0.3s;
+	padding-block: 0.8rem;
+}
+.btn:hover {
+	box-shadow: 0 0.5rem 1rem rgba(121, 166, 173, 0.25) !important;
+}
+.btn-outline-primary {
+	border-color: #79a6ad;
+	color: #79a6ad;
+	border-width: 3px;
+}
+.btn:hover.btn-outline-primary {
+	background-color: #79a6ad;
+	border-color: #79a6ad;
+	color: #fff;
+}
+.btn-check:checked + .btn.btn-outline-primary {
+	background-color: #79a6ad;
+	border-color: #79a6ad;
+	color: #fff;
+}
+/* CAP Input */
+.form-control:focus {
+	border-color: #8cbec6;
+	box-shadow: 0 0 0 0.25rem rgba(121, 166, 173, 0.55);
+}
+/* Search Button */
+.btn-primary {
+	background-color: rgba(121, 166, 173, 1);
+	border-color: #79a6ad;
+	color: #fff;
+}
+.btn:hover.btn-primary {
+	background-color: rgba(121, 166, 173, 0.85);
+	border-color: rgba(121, 166, 173, 0.85);
+	color: #fff;
+}
+.button-send {
+	display: flex;
+	align-items: center;
+}
+
+/*
+ * Header
+ * ------------------------------------
+ */
 .header {
 	background-color: #987654;
 	color: #ffffff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
 }
 .header a {
 	color: #ffffff;
+}
+
+/*
+ * Hero Section
+ * ------------------------------------
+ */
+.hero-section {
+	min-height: 100vh;
+	position: relative;
+	z-index: 0;
+	display: flex;
+}
+
+/*
+ * Home
+ * ------------------------------------
+ */
+.home .hero-section,
+.signin .hero-section,
+.signup .hero-section,
+.profile .hero-section {
+	background-image: url("/src/assets/images/bg-home.jpg");
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: center;
+}
+.home .hero-section::before,
+.signin .hero-section::before,
+.signup .hero-section::before,
+.profile .hero-section::before {
+	position: absolute;
+	content: " ";
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.35);
+}
+.hero-section__text {
+	position: relative;
+	color: #ffffff;
+	text-align: center;
+	z-index: 1;
+}
+.services__card-sx {
+	display: flex;
+}
+.services__card-sx img {
+	max-width: 42px;
+}
+.service__card-dx .card-header {
+	padding-block: 30px;
+	text-align: center;
+}
+.service__card-dx .card-body {
+	padding: 15px;
+}
+.service__card-dx .card-body p {
+	padding: 15px;
+	margin-bottom: 0;
+}
+@media screen and (max-width: 991px) {
+	.service__card-dx {
+		margin-top: 2rem;
+	}
+}
+
+/* ***** REVIEWS ***** */
+.reviews .row {
+	margin-bottom: 150px;
+}
+.reviews__card {
+	position: relative;
+}
+.reviews__text {
+	border-radius: 5px;
+	border: 1px solid #e5e5e5;
+	width: 85%;
+	padding: 30px;
+	background-color: #ffffff;
+	position: absolute;
+	left: 30px;
+	bottom: -150px;
+}
+.reviews__text span {
+	color: #bbb;
+}
+@media screen and (max-width: 991px) {
+	.reviews .row {
+		margin-bottom: 0;
+	}
+	.reviews .row > .col:first-of-type {
+		margin-bottom: 2rem;
+	}
+	.reviews__card img {
+		max-height: 300px;
+		width: 100%;
+		object-fit: cover;
+		object-position: top;
+	}
+	.reviews__text {
+		width: 100%;
+		padding: 30px;
+		position: unset;
+		left: unset;
+		bottom: unset;
+	}
+}
+
+/*
+ * Sign Up - Sign In
+ * ------------------------------------
+ */
+.signin .hero-section::before {
+	background-color: rgba(0, 0, 0, 0.55);
+}
+.signin form,
+.signup form {
+	background-color: #fff;
+	border-radius: 0.375rem;
+	position: relative;
+	z-index: 10;
+}
+.signin form input[id="email"],
+.signup form input[id="name"] {
+	border-bottom-left-radius: unset;
+	border-bottom-right-radius: unset;
+}
+.signup form input[id="surname"],
+.signup form input[id="email"] {
+	border-radius: unset;
+}
+.signin form input[id="password"],
+.signup form input[id="password"] {
+	border-top-left-radius: unset;
+	border-top-right-radius: unset;
+}
+
+/*
+ * Search
+ * ------------------------------------
+ */
+.search {
+	background-color: #f7f7f7;
+	padding-top: 140px;
+	padding-bottom: 80px;
+}
+.search .hero-section {
+	align-items: flex-start;
+}
+.filters {
+	background-color: #fff;
+	border-radius: 0.375rem;
+	padding: 30px 20px;
+	position: sticky;
+	top: 140px;
+	/* width: 100%; */
+}
+/* ***** Custom Select ***** */
+.option {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px;
+}
+.option img {
+	width: 30px;
+	height: auto;
+	margin-right: 1rem;
+}
+/* ***** Dogsitters ***** */
+.dogsitters {
+	background-color: #fff;
+	border-radius: 0.375rem;
+	padding: 30px 20px;
+}
+.dogsitters .card {
+	background-color: #fff;
+	border: none;
+	border-radius: 0.375rem;
+	padding: 30px;
+	flex-direction: row;
+}
+.dogsitters .card-header {
+	padding: unset;
+	margin-bottom: 0;
+	color: unset;
+	background-color: unset;
+	border-bottom: unset;
+}
+.dogsitters .card-header:first-child {
+	border-radius: none;
+}
+.dogsitters .card-header img {
+	max-height: 120px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	width: auto;
+}
+
+/* .dogsitters .card img {
+	max-height: 120px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	width: auto;
+} */
+.dogsitters .card-title {
+	font-weight: 400;
+	margin-bottom: 0;
+}
+.dogsitters .card-text {
+	margin-bottom: 0;
+	font-size: 13px;
+	line-height: 1.3;
+	font-weight: 300;
+}
+.dogsitters .card-footer {
+	padding: unset;
+	color: unset;
+	background-color: unset;
+	border-top: unset;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+/* .dogsitters .card-footer span {
+	padding: 7px;
+	background-color: rgba(152, 152, 152, 0.1);
+	border-radius: 50%;
+}
+.dogsitters .card-footer svg {
+	color: rgba(0, 0, 0, 0.3);
+}
+.dogsitters svg {
+	width: 16px;
+} */
+.dogsitters .card-body svg {
+	width: 16px;
+}
+.dogsitters .card-footer .img-wrapper {
+	display: inline-block;
+	padding: 7px;
+	background-color: rgba(152, 152, 152, 0.1);
+	border-radius: 50%;
+}
+.dogsitters .card-footer img {
+	width: 22px;
+}
+
+/*
+ * Profile
+ * ------------------------------------
+ */
+.profile .hero-section {
+	align-items: flex-start;
+}
+.profile .hero-section > .container {
+	padding-top: 140px;
+	padding-bottom: 80px;
+	z-index: 10;
+}
+.my-profile,
+.my-wallet,
+.my-dogs {
+	padding: 30px;
+	background-color: #fff;
+	border-radius: 0.375rem;
+}
+.column-left-profile {
+	position: sticky;
+	top: 140px;
+}
+.my-profile {
+	margin-bottom: 3rem;
+}
+.my-profile p {
+	margin-bottom: 0;
+}
+.my-wallet h4 {
+	text-transform: uppercase;
+	margin-bottom: 1.25rem;
+}
+.my-wallet .btn {
+	font-size: 16px;
+}
+.my-dogs .card {
+	border: unset;
+}
+.my-dogs .card-body {
+	padding: 0;
+}
+.my-dogs .card-title,
+.my-dogs .list-group-item,
+.my-dogs .card-footer span {
+	color: #79a6ad;
+}
+.my-dogs .card-title {
+	font-style: italic;
+	font-weight: 500;
+}
+.my-dogs .card-footer svg {
+	display: block;
+	width: 20px;
+	height: auto;
+	margin: 0.5rem;
+	color: #79a6ad;
+	fill: #79a6ad;
+	cursor: pointer;
+}
+.my-dogs .card-footer span {
+	font-size: 1rem;
+}
+.my-dogs .card.card-add {
+	height: 100%;
+	min-height: 200px;
+	justify-content: center;
+	text-align: center;
+}
+.my-dogs .card .icon-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	margin-block: auto;
+}
+.my-dogs .card .icon-wrapper svg {
+	width: 30px;
+	height: auto;
+}
+
+/*
+ * Footer
+ * ------------------------------------
+ */
+.footer {
+	padding-block: 80px;
+	background-color: #f4f5f6;
+}
+.contacts__card {
+	display: flex;
+}
+
+/*
+ * Helpers
+ * ------------------------------------
+ */
+.space-1 {
+	margin-top: 50px;
+}
+.space-2 {
+	margin-top: 80px;
+}
+.py-50 {
+	padding-block: 50px;
+}
+.pb-80 {
+	padding-block: 80px;
 }
