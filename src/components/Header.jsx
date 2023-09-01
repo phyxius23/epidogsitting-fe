@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+	const myProfile = useSelector((state) => state.myProfile);
+	const dispatch = useDispatch();
+
+	// const [expanded, setExpanded] = useState(false);
+	// const logout = (e) => {
+	// 	dispatch(logoutAction());
+	// 	setExpanded(false);
+	// };
+
 	return (
 		<Navbar expand="lg" className="header">
 			<Container>

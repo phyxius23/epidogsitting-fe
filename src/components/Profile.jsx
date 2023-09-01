@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Card, Col, Container, Image, ListGroup, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Card, Col, Container, Image, ListGroup, Row, Spinner } from "react-bootstrap";
 
 import { AddOutline, CreateOutline, TrashOutline } from "react-ionicons";
 
@@ -7,6 +7,8 @@ import imgProfileCard from "../assets/images/img-profile-1.jpg";
 import imgDogCard from "../assets/images/bg-card-dog-1.jpg";
 
 const Profile = () => {
+	const [isLoading, setIsLoading] = useState(true);
+
 	return (
 		<main className="profile">
 			<div className="hero-section">
