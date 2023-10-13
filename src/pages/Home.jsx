@@ -12,7 +12,7 @@ const Home = () => {
 				<Container>
 					<Row className="justify-content-center align-items-center">
 						<Col xs lg={7} className="hero-section__text">
-							<h1>Amorevole pet sitting nel tuo quartiere</h1>
+							<h1 className="title-cursive">Amorevole pet sitting nel tuo quartiere</h1>
 							<h2>Prenota sitter e dog walker di fiducia.</h2>
 						</Col>
 					</Row>
@@ -23,7 +23,7 @@ const Home = () => {
 				<Container className="space-2">
 					<Row>
 						<Col className="text-center">
-							<h3>Servizi per ogni cane</h3>
+							<h2 className="title-cursive">Servizi per ogni cane</h2>
 						</Col>
 					</Row>
 
@@ -32,7 +32,7 @@ const Home = () => {
 							{/* CARD PASSEGGIATA CANI */}
 							<div className="services__card-sx mb-5">
 								<div className="me-3">
-									<Image src={soggiorno} fluid />
+									<Image src={soggiorno} className="icon-color" fluid />
 								</div>
 								<div>
 									<h4>Pet Sitting Soggiorno</h4>
@@ -43,7 +43,7 @@ const Home = () => {
 							{/* CARD PET SITTING DIURNO */}
 							<div className="services__card-sx mb-5">
 								<div className="me-3">
-									<Image src={passeggiata} fluid />
+									<Image src={passeggiata} className="icon-color" fluid />
 								</div>
 								<div>
 									<h4>Passeggiata cani</h4>
@@ -54,7 +54,7 @@ const Home = () => {
 							{/* CARD PET SITTING SOGGIORNO */}
 							<div className="services__card-sx">
 								<div className="me-3">
-									<Image src={asilo} fluid />
+									<Image src={asilo} className="icon-color" fluid />
 								</div>
 								<div>
 									<h4>Pet Sitting Diurno</h4>
@@ -65,7 +65,7 @@ const Home = () => {
 						<Col>
 							<Card className="service__card-dx">
 								<Card.Header>
-									Prenota con pet sitter di <span className="fw-bold">fiducia</span>
+									Prenota un pet sitter di <span className="fw-bold">fiducia</span>
 								</Card.Header>
 								<Card.Body>
 									<p>✔️ Tutti i sitter passano una verifica dell’identità</p>

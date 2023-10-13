@@ -1,37 +1,37 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { LogoLinkedin, LogoGithub, Call, AtSharp } from "react-ionicons";
+import { Github, Linkedin, EnvelopeAtFill, TelephoneFill } from "react-bootstrap-icons";
 
 const Footer = () => {
 	return (
 		<footer className="footer">
 			<Container>
 				<Row>
-					<Col className="text-center">
-						<h3>I miei contatti</h3>
+					<Col className="text-center mb-5">
+						<h2 className="title-cursive">I miei contatti</h2>
 					</Col>
 				</Row>
-				<Row xs md={2}>
+				<Row xs={1} md={2}>
 					<Col>
 						{/* CARD GITHUB */}
 						<div className="contacts__card mb-4">
 							<div className="me-2">
-								<LogoGithub />
+								<Github />
 							</div>
 							<div>
-								<h4 className="mb-1">GitHub:</h4>
-								<p className="h4 mb-0">phyxius23</p>
+								<p className="mb-1">GitHub:</p>
+								<p className="mb-0">phyxius23</p>
 							</div>
 						</div>
 
 						{/* CARD LINKEDIN */}
-						<div className="contacts__card">
+						<div className="contacts__card mb-4">
 							<div className="me-2">
-								<LogoLinkedin />
+								<Linkedin />
 							</div>
 							<div>
-								<h4 className="mb-1">LinkedIn:</h4>
-								<p className="h4 mb-0">antonio-trentin-fullstackdeveloper</p>
+								<p className="mb-1">LinkedIn:</p>
+								<p className="mb-0">antonio-trentin-fullstackdeveloper</p>
 							</div>
 						</div>
 					</Col>
@@ -39,22 +39,22 @@ const Footer = () => {
 						{/* CARD EMAIL */}
 						<div className="contacts__card mb-4">
 							<div className="me-2">
-								<AtSharp />
+								<EnvelopeAtFill />
 							</div>
 							<div>
-								<h4 className="mb-1">Email:</h4>
-								<p className="h4 mb-0">antonio.trentin@outlook.it</p>
+								<p className="mb-1">Email:</p>
+								<p className="mb-0">antonio.trentin@outlook.it</p>
 							</div>
 						</div>
 
 						{/* CARD PHONE */}
-						<div className="contacts__card">
+						<div className="contacts__card mb-4">
 							<div className="me-2">
-								<Call />
+								<TelephoneFill />
 							</div>
 							<div>
-								<h4 className="mb-1">Phone:</h4>
-								<p className="h4 mb-0">+39 328 0586729</p>
+								<p className="mb-1">Phone:</p>
+								<p className="mb-0">+39 328 0586729</p>
 							</div>
 						</div>
 					</Col>

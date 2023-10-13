@@ -14,7 +14,7 @@
  */
 body {
 	background-color: #ffffff;
-	color: #3f2500;
+	color: #56777c;
 	font-family: "Ubuntu", sans-serif;
 	font-size: 16px;
 }
@@ -32,9 +32,13 @@ h1,
 .h1 {
 	font-size: 2.5rem;
 }
+h2,
+.h2 {
+	font-size: 2rem;
+}
 h3,
 .h3 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 h4,
 .h4 {
@@ -45,8 +49,7 @@ h5,
 	font-size: 1.5rem;
 	line-height: 1.5;
 }
-h1,
-h3 {
+.title-cursive {
 	font-family: "Courgette", cursive;
 }
 
@@ -60,37 +63,39 @@ h3 {
 	padding-block: 0.8rem;
 }
 .btn:hover {
-	box-shadow: 0 0.5rem 1rem rgba(121, 166, 173, 0.25) !important;
+	box-shadow: 0 0.5rem 1rem rgba(76, 105, 110, 0.35) !important;
 }
 .btn-outline-primary {
-	border-color: #79a6ad;
-	color: #79a6ad;
-	border-width: 3px;
+	border-color: #4c696e;
+	color: #4c696e;
+	border-width: 2px;
 }
 .btn:hover.btn-outline-primary {
-	background-color: #79a6ad;
-	border-color: #79a6ad;
+	background-color: #4c696e;
+	border-color: #4c696e;
 	color: #fff;
 }
 .btn-check:checked + .btn.btn-outline-primary {
-	background-color: #79a6ad;
-	border-color: #79a6ad;
+	background-color: #4c696e;
+	border-color: #4c696e;
 	color: #fff;
 }
 /* CAP Input */
 .form-control:focus {
 	border-color: #8cbec6;
-	box-shadow: 0 0 0 0.25rem rgba(121, 166, 173, 0.55);
+	box-shadow: 0 0 0 0.25rem rgba(76, 105, 110, 0.3);
+	z-index: 10;
+	position: relative;
 }
 /* Search Button */
 .btn-primary {
-	background-color: rgba(121, 166, 173, 1);
-	border-color: #79a6ad;
+	background-color: rgba(76, 105, 110, 1);
+	border-color: #4c696e;
 	color: #fff;
 }
 .btn:hover.btn-primary {
-	background-color: rgba(121, 166, 173, 0.85);
-	border-color: rgba(121, 166, 173, 0.85);
+	background-color: rgba(76, 105, 110, 1);
+	border-color: rgba(76, 105, 110, 1);
 	color: #fff;
 }
 .button-send {
@@ -99,11 +104,19 @@ h3 {
 }
 
 /*
+ * Card Custom
+ * ------------------------------------
+ */
+.card {
+	color: #4c696e;
+}
+
+/*
  * Header
  * ------------------------------------
  */
 .header {
-	background-color: #987654;
+	background-color: #4c696e;
 	color: #ffffff;
 	position: fixed;
 	top: 0;
@@ -115,6 +128,13 @@ h3 {
 	color: #ffffff;
 	text-decoration: none;
 	padding: 0.5rem;
+	transition-duration: 0.3s;
+}
+.header a:hover {
+	color: #bbb;
+}
+.header .navbar-toggler-icon {
+	filter: brightness(10);
 }
 
 /*
@@ -154,6 +174,9 @@ h3 {
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.35);
 }
+.hero-section > * {
+	z-index: 10;
+}
 .hero-section__text {
 	position: relative;
 	color: #ffffff;
@@ -180,6 +203,11 @@ h3 {
 @media screen and (max-width: 991px) {
 	.service__card-dx {
 		margin-top: 2rem;
+	}
+}
+@media screen and (max-width: 767px) {
+	.home .container {
+		padding-inline: 20px;
 	}
 }
 
@@ -290,6 +318,11 @@ h3 {
 	width: 30px;
 	height: auto;
 	margin-right: 1rem;
+	filter: brightness(0) saturate(100%) invert(44%) sepia(22%) saturate(453%) hue-rotate(140deg)
+		brightness(93%) contrast(88%);
+}
+.option span {
+	color: #4c696e;
 }
 /* ***** Dogsitters ***** */
 .dogsitters {
@@ -303,6 +336,10 @@ h3 {
 	border-radius: 0.375rem;
 	padding: 30px;
 	flex-direction: row;
+	margin-bottom: 1.5rem;
+}
+.dogsitters .card:last-of-type {
+	margin-bottom: 0;
 }
 .dogsitters .card-header {
 	padding: unset;
@@ -370,6 +407,12 @@ h3 {
 .dogsitters .card-footer img {
 	width: 22px;
 }
+.dogsitters .card-footer .img-wrapper__favorite {
+	background-color: #56777c;
+}
+.dogsitters .card-footer .img-wrapper__favorite img {
+	filter: invert(1);
+}
 
 /*
  * Profile
@@ -381,18 +424,56 @@ h3 {
 .profile .hero-section > .container {
 	padding-top: 140px;
 	padding-bottom: 80px;
-	z-index: 10;
 }
 .my-profile,
 .my-wallet,
 .my-dogs {
 	padding: 30px;
+	border-radius: 0.375rem;
+	position: relative;
+}
+.my-profile,
+.my-wallet {
+	background-color: #fff;
+}
+.my-dogs::before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 	background-color: #fff;
 	border-radius: 0.375rem;
+	z-index: 0;
+}
+@media screen and (max-width: 767px) {
+	.profile .hero-section > .container {
+		padding-top: 104px;
+		padding-bottom: 30px;
+	}
+	.my-wallet {
+		margin-bottom: 3rem;
+	}
+	.my-dogs::before {
+		height: calc(100% - 24px);
+		width: calc(100% - 24px);
+		margin-left: 12px;
+	}
+}
+.my-dogs .row {
+	position: relative;
+	z-index: 10;
 }
 .column-left-profile {
 	position: sticky;
 	top: 140px;
+}
+@media screen and (max-width: 767px) {
+	.column-left-profile {
+		position: relative;
+		top: 0;
+	}
 }
 .my-profile {
 	margin-bottom: 3rem;
@@ -416,7 +497,7 @@ h3 {
 .my-dogs .card-title,
 .my-dogs .list-group-item,
 .my-dogs .card-footer span {
-	color: #79a6ad;
+	color: #56777c;
 }
 .my-dogs .card-title {
 	font-style: italic;
@@ -427,20 +508,34 @@ h3 {
 	width: 20px;
 	height: auto;
 	margin: 0.5rem;
-	color: #79a6ad;
-	fill: #79a6ad;
+	color: #56777c;
+	fill: #56777c;
 	cursor: pointer;
 }
 .my-dogs .card-footer span {
 	font-size: 1rem;
 }
-.my-dogs .card.card-add {
-	height: 100%;
-	min-height: 200px;
-	justify-content: center;
-	text-align: center;
+
+.my-dogs .icon-update-image {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(89, 119, 124, 0.75);
+	display: flex;
+	justify-content: flex-end;
 }
-.my-dogs .card .icon-wrapper {
+.my-dogs .icon-update-image > div {
+	margin: 0.4rem;
+}
+
+.my-dogs .icon-update-image svg {
+	fill: #fff;
+	width: 20px;
+	height: auto;
+	cursor: pointer;
+}
+.my-dogs .icon-add-image {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -448,9 +543,97 @@ h3 {
 	cursor: pointer;
 	margin-block: auto;
 }
+.my-dogs .icon-add-image svg {
+	width: 40px;
+	height: auto;
+}
+.my-dogs .card .card-body {
+	flex: unset;
+}
+
+/* ***** Card Add Dog ***** */
+.my-dogs .card.card-add {
+	height: 100%;
+	min-height: 200px;
+	justify-content: center;
+	text-align: center;
+}
+.my-dogs .card-add .icon-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	margin-block: auto;
+}
+.my-dogs .card .icon-wrapper > * {
+	color: #56777c;
+}
 .my-dogs .card .icon-wrapper svg {
 	width: 30px;
 	height: auto;
+}
+
+/*
+ * Dogsitter
+ * ------------------------------------
+ */
+.dogsitter {
+	background-color: #f7f7f7;
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+.dogsitter .hero-section {
+	align-items: flex-start;
+}
+
+.dogsitter .service .card {
+	font-size: 1.25rem;
+	font-weight: 300;
+}
+.dogsitter .service .card-title {
+	padding-inline: 1rem;
+}
+.dogsitter .service div:last-of-type p {
+	margin-bottom: 0;
+}
+.dogsitter .service-row {
+	padding: 0.5rem 1rem;
+	border-radius: 0.375rem;
+}
+.dogsitter .service-row .serviceIcon {
+	height: 22px;
+	width: auto;
+	margin-right: 0.5rem;
+	filter: brightness(0) saturate(100%) invert(44%) sepia(22%) saturate(453%) hue-rotate(140deg)
+		brightness(93%) contrast(88%);
+}
+.dogsitter .selected {
+	background-color: rgba(89, 119, 124, 1);
+	color: #fff;
+	font-weight: 400;
+}
+.dogsitter .selected .serviceIcon {
+	filter: invert(1);
+}
+.dogsitter .img-wrapper {
+	display: inline-block;
+	padding: 7px;
+	background-color: rgba(152, 152, 152, 0.1);
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+}
+.dogsitter .img-wrapper img {
+	width: 40px;
+}
+.dogsitter .img-wrapper__favorite {
+	background-color: #56777c;
+}
+.dogsitter .img-wrapper__favorite img {
+	filter: invert(1);
 }
 
 /*
@@ -461,8 +644,37 @@ h3 {
 	padding-block: 80px;
 	background-color: #f4f5f6;
 }
-.contacts__card {
+.footer p {
+	font-weight: 500;
+}
+.footer .contacts__card {
 	display: flex;
+}
+.footer .contacts__card svg {
+	font-size: 1.3rem;
+	vertical-align: sub;
+}
+
+/*
+ * Calendar
+ * ------------------------------------
+ */
+.react-calendar {
+	width: unset;
+	max-width: unset;
+	border: unset;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.125em;
+	padding: 1rem 2rem;
+	border-radius: 0.375rem;
+}
+.react-calendar__tile--now {
+	background-color: #ddd;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus,
+.react-calendar__tile--active {
+	background-color: #56777c;
 }
 
 /*
@@ -480,4 +692,14 @@ h3 {
 }
 .pb-80 {
 	padding-block: 80px;
+}
+.p-10 {
+	padding: 5rem;
+}
+.image-dogsitter img {
+	width: 50%;
+}
+.icon-color {
+	filter: brightness(0) saturate(100%) invert(44%) sepia(22%) saturate(453%) hue-rotate(140deg)
+		brightness(93%) contrast(88%);
 }

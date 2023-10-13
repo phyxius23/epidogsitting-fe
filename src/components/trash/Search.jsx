@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Card, Col, Container, Form, Image, Row } from "react-bootstrap";
 import Select, { components } from "react-select";
 
+import { StarFill } from "react-bootstrap-icons";
+
+// IMMAGINI STATICHE
 import dogHouse from "../assets/icons/dog-house.png";
 import dogTraining from "../assets/icons/dog-training.png";
 import dogWalking from "../assets/icons/dog-walking.png";
 import dogFavorite from "../assets/icons/dog-favorite.png";
-
-import { StarSharp } from "react-ionicons"; //=> HeartOutline
-
 import imgProfileCard from "../assets/images/img-profile-1.jpg";
 
 const Search = () => {
@@ -82,7 +82,8 @@ const Search = () => {
 									<Card.Text>Amore, benessere e divertimento</Card.Text>
 									<Card.Text>Roma, 00135</Card.Text>
 									<Card.Text className="d-flex align-items-center">
-										<StarSharp height="16px" width="16px" />
+										{/* ICONA CARICATA CORRETTAMENTE DA BOOTSTRAP ICONS */}
+										<StarFill />
 										<span className="ms-1">5.0 - 5 Recensioni</span>
 									</Card.Text>
 								</Card.Body>
@@ -108,7 +109,7 @@ const Search = () => {
 									<Card.Text>Amore, benessere e divertimento</Card.Text>
 									<Card.Text>Roma, 00135</Card.Text>
 									<Card.Text className="d-flex align-items-center">
-										<StarSharp height="16px" width="16px" />
+										<StarFill />
 										<span className="ms-1">5.0 - 5 Recensioni</span>
 									</Card.Text>
 								</Card.Body>
@@ -134,7 +135,7 @@ const Search = () => {
 									<Card.Text>Amore, benessere e divertimento</Card.Text>
 									<Card.Text>Roma, 00135</Card.Text>
 									<Card.Text className="d-flex align-items-center">
-										<StarSharp height="16px" width="16px" />
+										<StarFill />
 										<span className="ms-1">5.0 - 5 Recensioni</span>
 									</Card.Text>
 								</Card.Body>
@@ -160,7 +161,7 @@ const Search = () => {
 									<Card.Text>Amore, benessere e divertimento</Card.Text>
 									<Card.Text>Roma, 00135</Card.Text>
 									<Card.Text className="d-flex align-items-center">
-										<StarSharp height="16px" width="16px" />
+										<StarFill />
 										<span className="ms-1">5.0 - 5 Recensioni</span>
 									</Card.Text>
 								</Card.Body>
@@ -186,7 +187,7 @@ const Search = () => {
 									<Card.Text>Amore, benessere e divertimento</Card.Text>
 									<Card.Text>Roma, 00135</Card.Text>
 									<Card.Text className="d-flex align-items-center">
-										<StarSharp height="16px" width="16px" />
+										<StarFill />
 										<span className="ms-1">5.0 - 5 Recensioni</span>
 									</Card.Text>
 								</Card.Body>
@@ -212,7 +213,7 @@ const Search = () => {
 									<Card.Text>Amore, benessere e divertimento</Card.Text>
 									<Card.Text>Roma, 00135</Card.Text>
 									<Card.Text className="d-flex align-items-center">
-										<StarSharp height="16px" width="16px" />
+										<StarFill />
 										<span className="ms-1">5.0 - 5 Recensioni</span>
 									</Card.Text>
 								</Card.Body>
@@ -236,7 +237,7 @@ const Search = () => {
 									<Card.Text>Amore, benessere e divertimento</Card.Text>
 									<Card.Text>Roma, 00135</Card.Text>
 									<Card.Text className="d-flex align-items-center">
-										<StarSharp height="16px" width="16px" />
+										<StarFill />
 										<span className="ms-1">5.0 - 5 Recensioni</span>
 									</Card.Text>
 								</Card.Body>

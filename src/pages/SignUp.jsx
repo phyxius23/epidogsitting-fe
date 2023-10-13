@@ -11,7 +11,7 @@ const SignUp = () => {
 							<Form className="p-5 shadow-lg">
 								{" "}
 								{/** onSubmit={sendRegister} */}
-								<h1 className="h3 mb-3 fw-normal">Registrati su EpiDogSitting!</h1>
+								<h1 className="h3 mb-3 fw-normal title-cursive">Registrati su EpiDogSitting!</h1>
 								<FloatingLabel controlId="name" label="Nome" className="">
 									<Form.Control
 										required
